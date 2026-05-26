@@ -1,0 +1,71 @@
+name: "[Mock] Migrate DB — Production"
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: "Release tag to deploy (e.g. v1.2.3)"
+        required: true
+        type: string
+        default: "v1.0.0"
+      skip_smoke_tests:
+        description: "Skip post-deploy smoke tests"
+        required: false
+        type: boolean
+        default: "false"
+      notify_channel:
+        description: "Slack channel to notify on completion"
+        required: false
+        type: string
+        default: "#deployments"
+
+jobs:
+  preflight:
+    name: Pre-flight checks
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🔍 Verify tag exists
+        run: |
+          echo "Verifying tag: ${{ inputs.release_tag }}"
+          sleep 3
+          echo "✅ Tag verified"
+
+      - name: 🔒 Check deployment lock
+        run: |
+          echo "Checking for concurrent deployments..."
+          sleep 2
+          echo "✅ Lock acquired"
+
+  deploy-production:
+    name: Deploy ${{ inputs.release_tag }} → production
+    runs-on: ubuntu-latest
+    environment: 'production'
+    needs: preflight
+
+    steps:
+      - name: 📋 Print inputs
+        run: |
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo "  Target      : production"
+          echo "  Release tag : ${{ inputs.release_tag }}"
+          echo "  Skip smoke  : ${{ inputs.skip_smoke_tests }}"
+          echo "  Notify      : ${{ inputs.notify_channel }}"
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+
+      - name: 🚀 Deploy to production
+        run: |
+          echo "Deploying ${{ inputs.release_tag }} to production..."
+          sleep 5
+          echo "✅ Production deploy complete"
+
+      - name: 🩺 Smoke tests
+        if: inputs.skip_smoke_tests != 'true'
+        run: |
+          echo "Running production smoke tests..."
+          sleep 2
+          echo "✅ All smoke tests passed"
+
+      - name: 📣 Notify team
+        run: |
+          echo "Notifying ${{ inputs.notify_channel }}..."
+          echo "✅ Notification sent: ${{ inputs.release_tag }} deployed to production"

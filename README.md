@@ -2,8 +2,8 @@
 
 **A desktop app for orchestrating multi-repo GitHub Actions executions.** Plan a batch of `workflow_dispatch` triggers, run them in parallel or sequentially, handle approvals inline, and tail live logs — without leaving the app.
 
-[![Latest release](https://img.shields.io/github/v/release/Falcighol/freya-app?label=latest&color=6366f1)](https://github.com/Falcighol/freya-app/releases/latest)
-[![Downloads](https://img.shields.io/github/downloads/Falcighol/freya-app/total?color=6366f1)](https://github.com/Falcighol/freya-app/releases)
+[![Latest release](https://img.shields.io/github/v/release/Falciighol/freya-app?label=latest&color=6366f1)](https://github.com/Falciighol/freya-app/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/Falciighol/freya-app/total?color=6366f1)](https://github.com/Falciighol/freya-app/releases)
 ![Platforms](https://img.shields.io/badge/platforms-macOS%20%7C%20Windows%20%7C%20Linux-6366f1)
 
 <!-- TODO: replace with a real screenshot before publishing the first release -->
@@ -35,7 +35,7 @@ If your release process involves triggering several `workflow_dispatch` workflow
 
 ## Download
 
-Grab the latest version for your platform from the [latest release](https://github.com/Falcighol/freya-app/releases/latest).
+Grab the latest version for your platform from the [latest release](https://github.com/Falciighol/freya-app/releases/latest).
 
 ### macOS
 
@@ -102,7 +102,7 @@ Want to clean up everything Freya stored? Delete the directory above and uninsta
 
 ## Reporting issues
 
-Found a bug, or want a feature? **[Open an issue](https://github.com/Falcighol/freya-app/issues/new)** on this repo. Include:
+Found a bug, or want a feature? **[Open an issue](https://github.com/Falciighol/freya-app/issues/new)** on this repo. Include:
 
 - Your OS + version
 - Freya version (Settings → About)
@@ -115,4 +115,4 @@ The source code lives in a private repo, so PRs aren't open right now — but fe
 
 ## License & acknowledgments
 
-Freya is a personal project by [@Falcighol](https://github.com/Falcighol). It would not exist without these excellent open-source projects: [Electron](https://www.electronjs.org/), [React](https://react.dev/), [Vite](https://vitejs.dev/), [Tailwind CSS](https://tailwindcss.com/), [Octokit](https://github.com/octokit), [Lucide](https://lucide.dev/), and [electron-builder](https://www.electron.build/).
+Freya is a personal project by [@Falciighol](https://github.com/Falciighol). It would not exist without these excellent open-source projects: [Electron](https://www.electronjs.org/), [React](https://react.dev/), [Vite](https://vitejs.dev/), [Tailwind CSS](https://tailwindcss.com/), [Octokit](https://github.com/octokit), [Lucide](https://lucide.dev/), and [electron-builder](https://www.electron.build/).
